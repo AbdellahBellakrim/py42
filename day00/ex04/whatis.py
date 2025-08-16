@@ -1,11 +1,20 @@
 import sys
 
-if __name__ == "__main__":
+
+def check_even_odd():
+    """
+    Checks if the provided command-line argument is an integer.
+    prints whether it is even or odd.
+    Raises an AssertionError if there are too many arguments,
+    or if the argument is not an integer.
+    """
     try:
         if len(sys.argv) < 2:
             sys.exit()
         if len(sys.argv) > 2:
-            raise AssertionError("AssertionError: more than one argument is provided")
+            raise AssertionError(
+                "AssertionError: more than one argument is provided"
+            )
         try:
             int_value = int(sys.argv[1])
         except ValueError:
@@ -16,3 +25,7 @@ if __name__ == "__main__":
             print("I'm Odd.")
     except AssertionError as e:
         print(e)
+
+
+if __name__ == "__main__":
+    check_even_odd()
