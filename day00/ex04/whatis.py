@@ -10,7 +10,7 @@ def check_even_odd():
     """
     try:
         if len(sys.argv) < 2:
-            sys.exit()
+            sys.exit("Usage: python whatis.py <number>")
         if len(sys.argv) > 2:
             raise AssertionError(
                 "AssertionError: more than one argument is provided"
