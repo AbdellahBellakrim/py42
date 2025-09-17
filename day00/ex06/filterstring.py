@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 
 
 class CustomArgumentParser(ArgumentParser):
-    def error(self, message):
+    def error(self):
         """Override the default error method to raise an AssertionError."""
         raise AssertionError("the arguments are bad")
 
