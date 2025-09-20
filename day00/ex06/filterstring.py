@@ -8,7 +8,7 @@ class CustomArgumentParser(ArgumentParser):
 
 
 if __name__ == "__main__":
-    """Main function to execute the script: filters words from string S longer
+    """Filters words from string S longer
       than integer N using list comprehension and lambda,
       with argument validation."""
     try:
