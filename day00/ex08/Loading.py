@@ -25,7 +25,7 @@ def progress_bar(part: int, whole: int, bar_length) -> str:
     return f"|{bar}|"
 
 
-def time_statistics(start_t, current_t) -> str:
+def time_statistics(start_t, current_t, current_iter, total_iter) -> str:
     """
         [elapsed<remaining, rate]
         [00:01<00:00, 191.29it/s]
@@ -36,19 +36,34 @@ def time_statistics(start_t, current_t) -> str:
             │
             └── Elapsed time (1 second)
     """
-    return ""
+    elapsed_t = current_t - start_t
+    rate = (current_iter + 1) / elapsed_t if elapsed_t else 0
+    remaining_t = (total_iter - current_iter) / rate if rate else 0
+
+    def format_time(seconds):
+        minutes = int(seconds) // 60
+        secs = int(seconds) % 60
+        return f"{minutes:02}:{secs:02}"
+
+    elapsed_str = format_time(elapsed_t)
+    remaining_str = format_time(remaining_t)
+    rate_str = f"{rate:7.2f}it/s"  # Always 7 chars before 'it/s'
+    # Pad the whole string to a fixed length (e.g., 24 chars)
+    stat = f"[{elapsed_str}<{remaining_str},{rate_str}]"
+    return stat.ljust(24)
 
 
 def ft_tqdm(lst: range):
     start_time = time()
     for index, elem in enumerate(lst):
         current_time = time()
-        print(round(current_time - start_time, 2))
+        time_s = time_statistics(start_time, current_time, index, len(lst) - 1)
         progress = percentage(index + 1, len(lst))
         counter = progress_counter(index + 1, len(lst))
-        barlenght = get_terminal_width() - len(progress) - len(counter) - 3
+        barlenght = get_terminal_width() - len(progress) - \
+            len(counter) - len(time_s) - 4
         bar = progress_bar(index + 1, len(lst), barlenght)
-        # print(f"\r{progress}{bar} {counter}", end="", flush=True)
+        print(f"\r{progress}{bar} {counter} {time_s}", end="", flush=True)
         yield elem
 
 
