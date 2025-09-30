@@ -1,5 +1,4 @@
-from time import sleep, time
-# from tqdm import tqdm
+from time import time
 from shutil import get_terminal_size
 
 
@@ -65,12 +64,3 @@ def ft_tqdm(lst: range):
         bar = progress_bar(index + 1, len(lst), barlenght)
         print(f"\r{progress}{bar} {counter} {time_s}", end="", flush=True)
         yield elem
-
-
-for elem in ft_tqdm(range(333)):
-    sleep(0.005)
-print()
-
-# for elem in tqdm(range(333)):
-#     sleep(0.005)
-# print()
