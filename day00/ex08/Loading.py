@@ -11,14 +11,18 @@ def get_terminal_width():
 
 
 def percentage(part: int, whole: int) -> str:
+    """Calculates the percentage of 'part' with respect to 'whole'
+    and returns it as a formatted string with a percentage sign."""
     return f"{(int(float((part * 100) / whole)))}%"
 
 
 def progress_counter(count: int, total: int) -> str:
+    """Returns a formatted string representing the progress counter."""
     return f"{int(float((count)))}/{total}"
 
 
 def progress_bar(part: int, whole: int, bar_length) -> str:
+    """Generates a progress bar string based on the current progress."""
     filled_length = int(bar_length * part // whole)
     bar = '█' * filled_length + ' ' * (bar_length - filled_length)
     return f"|{bar}|"
@@ -26,6 +30,7 @@ def progress_bar(part: int, whole: int, bar_length) -> str:
 
 def time_statistics(start_t, current_t, current_iter, total_iter) -> str:
     """
+    Computes and formats time statistics for progress tracking.
         [elapsed<remaining, rate]
         [00:01<00:00, 191.29it/s]
             │    │       │
@@ -53,6 +58,8 @@ def time_statistics(start_t, current_t, current_iter, total_iter) -> str:
 
 
 def ft_tqdm(lst: range):
+    """A generator that mimics the behavior of tqdm
+    for tracking progress in loops."""
     start_time = time()
     for index, elem in enumerate(lst):
         current_time = time()
