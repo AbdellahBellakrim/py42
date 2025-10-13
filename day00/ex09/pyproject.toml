@@ -1,0 +1,16 @@
+[project]
+name = "ex09"
+version = "0.1.0"
+description = "Exercise 09 for py-pool day00"
+authors = [
+    { name="abellakr", email="abellakr@1337.ma" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = ["ex09"]
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
