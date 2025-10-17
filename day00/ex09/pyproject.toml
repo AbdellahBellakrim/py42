@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "ft_tqdm"
+name = "ft_package"
 version = "0.0.1"
 description = "A sample project for demonstration purposes."
 authors = [
@@ -13,7 +13,7 @@ authors = [
 maintainers = [
   {name = "Abdellah Bellakrim", email = "bellakrim2032@gmail.com"}
 ]
-readme = "README.md"
+readme = "docs/README.md"
 license = {text = "MIT"}
 classifiers = [
   "Development Status :: 4 - Beta",
