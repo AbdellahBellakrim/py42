@@ -11,8 +11,8 @@ it does also provide utils provided
 """
 
 __version__ = "0.0.1"
-__author__ = "abellakr"
-__email__ = " abellakr@student.1337.ma"
+__author__ = "Abdellah Bellakrim"
+__email__ = " bellakrim2032@gmail.com"
 __license__ = "MIT"
 
 __all__ = [

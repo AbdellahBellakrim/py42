@@ -1,11 +1,11 @@
 [build-system]
-requires = ["flit_core>=3.4"]
-build-backend = "flit_core.buildapi"
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
 
 
 [project]
-dynamic = ["version"]
 name = "ft_tqdm"
+version = "0.0.1"
 description = "A sample project for demonstration purposes."
 authors = [
   {name = "Abdellah Bellakrim", email = "bellakrim2032@gmail.com"}
@@ -14,9 +14,9 @@ maintainers = [
   {name = "Abdellah Bellakrim", email = "bellakrim2032@gmail.com"}
 ]
 readme = "README.md"
-license = "MIT"
+license = {text = "MIT"}
 classifiers = [
-  "Development Status :: 0.1 - Beta",
+  "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3.10",
 ]
