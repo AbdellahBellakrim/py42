@@ -21,3 +21,7 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
 ]
 requires-python = ">=3.10"
+
+[project.urls]
+homepage = "https://github.com/AbdellahBellakrim/py42/tree/main/day00/ex09"
+Documentation = "https://github.com/AbdellahBellakrim/py42/tree/main/day00/ex09/docs"
