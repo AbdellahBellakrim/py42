@@ -19,7 +19,11 @@ if __name__ == "__main__":
             args, extra_args = parser.parse_known_args()
             if extra_args:
                 raise AssertionError("the arguments are bad")
-            print([item for item in args.S.split() if len(item) > args.N])
+            words = args.S.split()
+            filtered_words = [
+                item for item in words if (lambda x: len(x) > args.N)(item)
+            ]
+            print(filtered_words)
         except Exception as e:
             raise AssertionError("the arguments are bad") from e
     except AssertionError as e:

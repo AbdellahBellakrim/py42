@@ -1,4 +1,4 @@
-from sys import argv
+import sys
 
 
 def check_even_odd():
@@ -9,14 +9,14 @@ def check_even_odd():
     or if the argument is not an integer.
     """
     try:
-        if len(argv) < 2:
+        if len(sys.argv) < 2:
             exit("Usage: python whatis.py <number>")
-        if len(argv) > 2:
+        if len(sys.argv) > 2:
             raise AssertionError(
                 "AssertionError: more than one argument is provided"
             )
         try:
-            int_value = int(argv[1])
+            int_value = int(sys.argv[1])
         except ValueError:
             raise AssertionError("AssertionError: argument is not an integer")
         if int_value % 2 == 0:
