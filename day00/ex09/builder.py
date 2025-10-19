@@ -6,14 +6,14 @@ def main():
     print("Setup script executed.")
     # Run the build command
     print("Building package...")
-    build_process = subprocess.run(["python", "-m", "build"], check=False)
+    build_process = subprocess.run([sys.executable, "-m", "build"], check=False)
     if build_process.returncode != 0:
         print("Build failed.")
         sys.exit(1)
     # Install the package
     print("Installing package...")
     install_process = subprocess.run(
-        ["pip", "install", "./dist/ft_package-0.0.1-py3-none-any.whl"],
+        [sys.executable, "-m", "pip", "install", "./dist/ft_package-0.0.1-py3-none-any.whl"],
         check=False
     )
     if install_process.returncode != 0:
@@ -22,10 +22,10 @@ def main():
     print("Package built and installed successfully.")
     # List the installed package
     print("\nListing package:")
-    subprocess.run(["pip", "list", "|", "grep", "ft_package"], shell=True)
+    subprocess.run([sys.executable, "-m", "pip", "list"], check=False)
     # Show package details
     print("\nPackage details:")
-    subprocess.run(["pip", "show", "-v", "ft_package"])
+    subprocess.run([sys.executable, "-m", "pip", "show", "-v", "ft_package"])
 
 
 if __name__ == "__main__":

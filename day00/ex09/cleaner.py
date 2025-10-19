@@ -10,13 +10,12 @@ def main():
     # Uninstall the package
     print("\n[1/5] Uninstalling ft_package...")
     subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "ft_package"], check=False)
-    # subprocess.run(["pip", "uninstall", "-y", "ft_package"], check=False)
 
     # Remove build directories
     dirs_to_remove = [
         "build",
         "dist",
-        "src/ft_package.egg-info"
+        "src/ft_package.egg-info",
         "ft_package.egg-info",
         "__pycache__",
         ".pytest_cache",
